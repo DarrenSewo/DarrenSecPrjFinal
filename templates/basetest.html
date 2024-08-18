@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}MyWebApp{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/MyWebApp/home">Home</a> <br>
+            {% if 'loggedin' in session %}
+                <a href="/MyWebApp/profile">Profile</a>
+                <a href="/MyWebApp/logout">Logout</a>
+            {% else %}
+                <a href="/secure_login">Secure Login</a> <br>
+                <a href="/vulnerable_login">Vulnerable Login</a> <br>
+                <!-- <a href="/MyWebApp/registration">Register</a> <br> -->
+                <a href="/vulnerable_update"> Vulnerable Update</a> <br>
+                <a href="/secure_update"> Secure Update</a> <br>
+                <a href="/vulnerable_delete">Vulnerable Delete</a> <br>
+                <a href="/secure_delete"> Secure Delete</a> <br>
+
+            {% endif %}
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

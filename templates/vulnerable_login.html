@@ -1,0 +1,40 @@
+{% extends "basetest.html" %}
+
+{% block title %}Vulnerable Login{% endblock %}
+
+{% block content %}
+    <h2>Vulnerable Login</h2>
+    <form action="/vulnerable_login" method="post">
+        <div>{{ msg }}</div>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <br>
+        <input type="submit" value="Login">
+    </form>
+    <br>
+    <a href="/MyWebApp/registration">Register</a>
+    <br>
+
+    {% if data %}
+    <h3>Retrieved Data:</h3>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Email</th>
+        </tr>
+        {% for account in data %}
+        <tr>
+            <td>{{ account.id }}</td>
+            <td>{{ account.username }}</td>
+            <td>{{ account.password }}</td>
+            <td>{{ account.email }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+{% endblock %}

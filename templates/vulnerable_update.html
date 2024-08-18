@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vulnerable Update</title>
+</head>
+<body>
+    <h2>Vulnerable Update</h2>
+    <form action="/vulnerable_update" method="post">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        <br>
+        <label for="new_password">New Password:</label>
+        <input type="text" name="new_password" id="new_password" required>
+        <br>
+        <input type="submit" value="Update Password">
+    </form>
+
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <p>{{ msg }}</p>
+
+    {% if data %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Password Register Date</th>
+                <th>Password Expiry Date</th>
+                <th>Symmetric Key</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ data.id }}</td>
+                <td>{{ data.username }}</td>
+                <td>{{ data.password }}</td>
+                <td>{{ data.email }}</td>
+                <td>{{ data.password_register_date }}</td>
+                <td>{{ data.password_expiry_date }}</td>
+                <td>{{ data.symmetric_key }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {% endif %}
+</body>
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "basetest.html" %}
+
+{% block title %}Secure Login{% endblock %}
+
+{% block content %}
+    <h2>Secure Login</h2>
+    <form action="/secure_login" method="post">
+        <div>{{ msg }}</div>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <br>
+        <input type="submit" value="Login">
+    </form>
+    <br>
+    <a href="/MyWebApp/registration">Register</a>
+{% endblock %}

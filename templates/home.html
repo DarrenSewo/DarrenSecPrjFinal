@@ -1,0 +1,10 @@
+{% extends "basetest.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h2>Welcome, {{ username }}</h2>
+    <a href="/MyWebApp/profile">Profile</a>
+    <br>
+    <a href="/MyWebApp/logout">Logout</a>
+{% endblock %}

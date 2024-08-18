@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vulnerable Delete</title>
+</head>
+<body>
+    <h2>Vulnerable Delete</h2>
+    <form action="/vulnerable_delete" method="post">
+        <div>{{ msg }}</div>
+        <label for="id">User ID:</label>
+        <input type="text" name="id" id="id" required>
+        <br>
+        <input type="submit" value="Delete Account">
+    </form>
+</body>
+</html>
